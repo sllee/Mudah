@@ -1,1 +1,22 @@
 
+<form method="post" action="/logout">
+	<input type="submit" value="Logout">
+</form>
+
+<form method="get" action="/products">
+	<input type="submit" value="Back">
+</form>
+
+
+<h2> Product: <%= @products.product_name%></h2><br>
+<% if current_user.id == @products.user_id %>
+	<form method="get" action="/products/<%=@products.id%>/edit">
+		<input type="submit" value="Edit">
+	</form>
+	<form method="post", action="/products/<%=@products.id%>">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete">
+	</form>
+<%end%>
+
+

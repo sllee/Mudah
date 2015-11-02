@@ -28,11 +28,10 @@ post '/products' do
 	# end
 end
 
-# get '/producs/:p_id' do
-# 	@products = Product.find(params[:p_id])
-# 	@answers = @products.answers.all
-# 	erb :"questions/question_show"
-# end
+get '/products/:p_id' do
+	@products = Product.find(params[:p_id])
+	erb :"static/products/products_show"
+end
 
 get '/products/:p_id/edit' do
 	byebug
@@ -41,7 +40,6 @@ get '/products/:p_id/edit' do
 end
 
 put '/products/:id' do
-	byebug
 	@product = Product.find(params[:id])
 	@product.product_name = params[:product][:name]
 	@product.save
@@ -51,6 +49,9 @@ end
 
 delete '/products/:id' do
 	byebug
-	Question.find(params[:id]).destroy
-	redirect to '/questions'
+	Product.find(params[:id]).destroy
+	redirect to '/products'
 end
+
+
+
