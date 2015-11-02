@@ -1,0 +1,23 @@
+<h1 style = "text-align: center">Welcome to MyMudah</h1><br>
+
+<h3 style = "text-align: center">Get whatever you want here!!</h3><br>
+
+<form method="post" action="/signup">
+	<input type=text placeholder="Username" name="user[name]"><br>
+	<input type=text placeholder="Email" name="user[email]"><br>
+	<input type=password placeholder="Password" name="user[password]"><br><br>
+	<input type="submit" value="Sign up">
+</form>
+<% if @error %>
+	<p><%=@error%></p>
+<%end%><br><br>
+
+<form method=post action="/login">
+	<input type=text placeholder="Email" name="user[email]"><br>
+	<input type=password placeholder="Password" name="user[password]"><br><br>
+	<input type=submit value="Login">
+</form>
+
+<% if @error_msg %>
+<p><%=@error_msg%></p>
+<%end%>
