@@ -8,3 +8,10 @@ get '/users/:user_id/products' do
 	byebug
 	erb :"static/users/users_products"
 end
+
+get '/users/:user_id/favourites' do
+	byebug
+	@user = User.find(params[:user_id])
+	@favourites = @user.favourites.all
+	erb :"static/users/users_favourites"
+end

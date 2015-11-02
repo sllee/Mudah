@@ -4,6 +4,11 @@
 	<input type="submit" value="Log out">
 </form>
 <br>
+<form method="get" action="/users/<%=current_user.id%>">
+	<input type="submit" value="Back">
+</form>
+<br>
+
 
 <h2> All your products <%=@user.name%> </h2>
 

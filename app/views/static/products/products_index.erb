@@ -13,6 +13,6 @@
 
 <% @products.each do |p| %>
 	<a href="/products/<%=p.id%>"><%= p.product_name %></a><br>
-	by: <%= p.user.name%>
+	by: <%= p.user.name%><br>
 	<!-- <p>by:<a href="/users/:id"><%= p.user.name%></a><p> -->
 <% end %>

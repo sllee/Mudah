@@ -1,0 +1,15 @@
+
+<form method="get" action="/users/<%=current_user.id%>">
+	<input type="submit" value="Back">
+</form>
+<br>
+<h2><%= @user.name%> your favourites!</h2>
+
+<% @favourites.each do |f| %>
+		<%= f.product %><br>
+	
+	<form method="post", action="/favourites/<%=f.id%>">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete">
+	</form>
+	<% end %>
