@@ -1,0 +1,12 @@
+<h1>Hot sell products </h1> <br>
+<h5> login as: <%=current_user.name%><br>
+
+<form action="/users/<%= current_user.id%>" method="get">
+	<input type="submit" value="My Profile">
+</form>
+<br>
+
+<form action="/users/logout" method="post">
+	<input type="submit" value="Log out">
+</form>
+<br>

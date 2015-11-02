@@ -1,0 +1,26 @@
+
+<br>
+<form action="/users/logout" method="post">
+	<input type="submit" value="Log out">
+</form>
+<br>
+
+<h2> All your products <%=@user.name%> </h2>
+
+<form action="/products/new" method="get">
+	<input type="submit" value="Add product">
+</form>
+<br>
+
+<% if @products %>
+	<% @products.each do |p| %>
+		<%= p.product_name %><br>
+		<form method="get" action="/products/<%=p.id%>/edit">
+		<input type="submit" value="Edit">
+	</form>
+	<form method="post", action="/products/<%=p.id%>">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete">
+	</form>
+	<% end %>
+<% end %>

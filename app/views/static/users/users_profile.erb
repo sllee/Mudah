@@ -1,0 +1,33 @@
+
+<h1>Hello! <%= current_user.name%></h1>
+
+<br>
+
+<p>Display Name: <%= current_user.name%></p>
+<p>Email: <%= current_user.email%></p>
+<p>Password: <%= current_user.password%></p>
+
+<br>
+<form action="/users/logout" method="post">
+	<input type="submit" value="Log out">
+</form>
+<br>
+
+
+<!-- <form action="/users/<%= current_user.id%>/products" method="get">
+	<input type="submit" value="Add product">
+</form> -->
+
+<form action="/users/<%= current_user.id%>/products" method="get">
+	<input type="submit" value="My products">
+</form>
+
+
+<!-- <form action="/products/<%= @user.id %>/show" method="get">
+	<input type="submit" value="Get My favourites">
+</form>
+<br>
+<form action="/answers/<%= @user.id %>/show" method="get">
+	<input type="submit" value="Get My answers">
+</form>
+<br> -->

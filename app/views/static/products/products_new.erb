@@ -1,0 +1,17 @@
+<h2> Add your product here </h2>
+
+<h5>When done, click 'send'</h5><br>
+
+<!-- <p><%= @error if @error %></p> -->
+
+		<form method="post" action="/products">
+			<input type="text" placeholder="product here..." name="product"><br>
+		  <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
+
+			<input type="submit" value="Send">
+		</form>
+
+		<form method="get" action="/users/<%=current_user.id%>/products"> 
+			<input type="submit" value="Back">
+		</form><br>
+
