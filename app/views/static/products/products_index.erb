@@ -1,5 +1,5 @@
 <h1>Hot sell products </h1> <br>
-<h5> login as: <%=current_user.name%><br>
+<h5> login as: <%=current_user.name%></h5>
 
 <form action="/users/<%= current_user.id%>" method="get">
 	<input type="submit" value="My Profile">
@@ -12,7 +12,7 @@
 <br>
 
 <% @products.each do |p| %>
-	<a href="/products/<%=p.id%>"><%= p.product_name %></a><br>
-	by: <%= p.user.name%><br>
+	<a href="/products/<%=p.id%>"><%= p.product_name %></a> price (RM):<%= p.price%><br>
+	by: <%= p.user.name%><br><br>
 	<!-- <p>by:<a href="/users/:id"><%= p.user.name%></a><p> -->
 <% end %>

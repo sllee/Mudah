@@ -5,10 +5,10 @@
 <!-- <p><%= @error if @error %></p> -->
 
 		<form method="post" action="/products">
-			<input type="text" placeholder="product here..." name="product"><br>
+			<input type="text" placeholder="product here..." name="product[product_name]"><br>
 		  <!-- <textarea class="form-control" rows="5" id="comment"></textarea> -->
-
-			<input type="submit" value="Send">
+		  <input type="text" placeholder="price" name="product[price]"><br>
+			<input type="submit" value="Submit">
 		</form>
 
 		<form method="get" action="/users/<%=current_user.id%>/products"> 

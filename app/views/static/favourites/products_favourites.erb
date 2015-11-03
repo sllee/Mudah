@@ -1,0 +1,12 @@
+
+<h1>Hello! <%= current_user.name%></h1><br>
+
+<h3>Your product <%=@product.product_name %> is favourite by </h3>
+
+<form method="get" action="/users/<%=current_user.id%>/products">
+	<input type="submit" value="Back">
+</form>
+
+<% @favourites.each do |f|%>
+	 by: <%= f.user.name %><br>
+<% end %>

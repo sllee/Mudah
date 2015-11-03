@@ -3,7 +3,7 @@ class CreateFavourites < ActiveRecord::Migration
 		create_table :favourites do |t|
 			t.string :product
 			t.belongs_to :user
-			# t_belongs_to :product
+			t.belongs_to :product
 			t.timestamps null: false
 		end
 	end

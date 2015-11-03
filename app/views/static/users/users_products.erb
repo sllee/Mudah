@@ -10,7 +10,7 @@
 <br>
 
 
-<h2> All your products <%=@user.name%> </h2>
+<h2> All your products, <%=@user.name%> </h2>
 
 <form action="/products/new" method="get">
 	<input type="submit" value="Add product">
@@ -19,13 +19,16 @@
 
 <% if @products %>
 	<% @products.each do |p| %>
-		<%= p.product_name %><br>
+		<a href="/products/<%=p.id%>/products_favourites"><%= p.product_name %></a> <br>
+		price: <%= p.price %><br>
+
 		<form method="get" action="/products/<%=p.id%>/edit">
-		<input type="submit" value="Edit">
-	</form>
-	<form method="post", action="/products/<%=p.id%>">
-		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Delete">
-	</form>
+			<input type="submit" value="Edit">
+		</form>
+		<form method="post", action="/products/<%=p.id%>">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete">
+		</form>
+
 	<% end %>
 <% end %>

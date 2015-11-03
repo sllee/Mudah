@@ -1,5 +1,5 @@
 
-<form method="post" action="/logout">
+<form action="/logout" method="post">
 	<input type="submit" value="Logout">
 </form>
 
@@ -8,8 +8,10 @@
 </form>
 
 
-<h2> Product: <%= @products.product_name%></h2><br>
+<h4> Product: <%= @products.product_name%></h4>
+	price (RM) :<%= @products.price%><br>
 <% if current_user.id == @products.user_id %>
+	<p>There are <%= @products.favourites.count %> favourites of this product</p><br>
 	<form method="get" action="/products/<%=@products.id%>/edit">
 		<input type="submit" value="Edit">
 	</form>
@@ -19,6 +21,7 @@
 	</form>
 <%end%>
 <% if current_user.id != @products.user.id %> 
+
 	<form action="/user/<%=current_user.id%>/favourites/<%=@products.id%>" method="post">
 <!-- 		<input name="product" value="<%= @products.product_name%>"> -->
 		<input type="submit" value="Add to Favourite">
